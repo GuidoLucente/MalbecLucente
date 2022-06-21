@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2? family= Hind:wght@300 & display=swap');
 
 *{
     box-sizing: border-box;
@@ -14,15 +13,17 @@ header{
     display: "flex";
     justify-content: "space-between";
     align-items: "center";
-    padding: 30% 10%;
+    padding: 1rem .5rem;
+    
 }
 
 li, a {
     font-family: "Monstserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: #edf0f1;
+    color: red;
     text-decoration: "none";
+    
 }
 
 .logo {
