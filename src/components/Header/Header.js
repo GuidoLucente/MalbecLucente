@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../Pictures/CupLogo.png"
+import CartWidget from "../CartWidget/Cart";
 import "./Header.css"
 
 
@@ -15,6 +16,9 @@ const Header = () => {
             <a href="#">Vinos Rosados</a> 
             
         </nav>
+        <div>
+            <CartWidget/>
+        </div>
     </header>
     )
    
