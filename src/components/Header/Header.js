@@ -6,20 +6,19 @@ import "./Header.css"
 
 const Header = () => {
     return(
-        <header>
-        <img src={Logo}  alt="" style={{width:"2rem"}}/>
-        <h1>Malbec Vinoteca</h1>
-        <nav>
-            
-            <a href="#">Espumantes</a> 
-            <a href="#">Vinos Blancos</a> 
-            <a href="#">Vinos Rosados</a> 
-            
-        </nav>
+       <div className="nav">
+       <h1> <img src={Logo}  alt="" style={{width:"10rem"}}/> Malbec </h1>
+        
+        <ul>
+         <li><a href="/" className="nav-item"> Vinos Tintos</a> </li>
+         <li><a href="/" className="nav-item"> Vinos Blancos</a></li>
+         <li><a href="/" className="nav-item"> Espumantes</a></li>
+        </ul>
+        
         <div>
             <CartWidget/>
         </div>
-    </header>
+        </div>
     )
    
 }

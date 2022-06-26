@@ -1,40 +1,50 @@
-
-
-*{
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
-    background-color: beige
-    
+    background-color: white;
 }
 
+.nav {
+    width: 99%;
+    margin: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: 	#56070C;
 
-header{
-    display: "flex";
-    justify-content: "space-between";
-    align-items: "center";
-    padding: 1rem .5rem;
-    
-}
-
-li, a {
-    font-family: "Monstserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: red;
-    text-decoration: "none";
-    
 }
 
 .logo {
-    cursor: "pointer";
+    width: 130px;
+    cursor: pointer;
 }
 
-.nav_links li {
-    list-style: "none";
+.nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 3px;
+    position: relative;
 }
 
-.nav_links li {
-    display: "inline-block";
-    padding: 0 px 20 px;
+.nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family:"san-serif";
+    font-size: 1.2rem;
+}
+
+.nav ul li::before {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: brown;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    transition: 0.4seg ease-out;
+}
+
+.nav ul li::before {
+    width: 100%;
 }
