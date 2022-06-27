@@ -7,7 +7,7 @@ import "./Header.css"
 const Header = () => {
     return(
        <div className="nav">
-       <h1> <img src={Logo}  alt="" style={{width:"10rem"}}/> Malbec </h1>
+       <h1> <img src={Logo}  alt="" style={{width:"10rem"}}/> </h1>
         
         <ul>
          <li><a href="/" className="nav-item"> Vinos Tintos</a> </li>
