@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
 .nav {
@@ -29,7 +28,7 @@
 
 .nav ul li a {
     text-decoration: none;
-    color: black;
+    color: beige;
     font-family:"san-serif";
     font-size: 1.2rem;
 }
