@@ -1,35 +1,40 @@
 import React, { useEffect, useState } from "react"
-import rutini from "../../Pictures/Rutini.png"
 import ItemList from "../ItemList/ItemList";
+import { getData } from "../mocks/ApiProducts";
 
 const ItemListContainer = ({ greeting }) => {
     const [productList, setProductList]=useState([])
-    const products = [
-        {id:'01', name:"Rutini", description:"Vino Rutini Encuentro Malbec 750ml. Rutini Wines", price: "$1499", img: "../../Pictures/rutini.jpg" }
-    ]
-    
-
-    const getData = new Promise ((resolve, reject) =>{
-        let condition = true
-        setTimeout(()=>{
-            if(condition){
-                resolve(products)
-            }else {reject("Vino picado") 
-        }
-        },2000)
-    })
+    const [loading, setLoading]=useState(true)
+   
 
     useEffect (()=>{
         getData
         .then((result)=> setProductList(result))
+        .catch((error)=> console.log(error))
+        
+    },[])
+
+    const getProducts = async () => {
+        try{
+            const respuesta = await getData
+            setProductList (respuesta)
+        } catch (error) {} finally{
+            setLoading(false)
+        }
+    } 
+    
+
+    useEffect(()=>{
+        getProducts()
     },[])
 
 
-    
+
     return(
         <div>
             <h1>{greeting}</h1>
-            <ItemList productList={productList}/>
+            {loading ? <p>cargandp...</p> : <ItemList productList={productList}/>}
+            
         </div>
     )
 
