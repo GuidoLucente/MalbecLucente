@@ -7,15 +7,11 @@ import Item from "./components/ItemProducts/Item";
 
 const App = () => {
   
-  const onAdd = () => {
-      alert ("Producto agregado al carrito")
-  }
-  
   return(
     <div className>
      <Header/>
      <ItemListContainer greeting="Malbec vinoteca, todas las bebidas a un click" />
-     <Contador initial={1} stock={12} onAdd={onAdd}/>
+     <Contador/>
      <Item/>
     </div>
   )
