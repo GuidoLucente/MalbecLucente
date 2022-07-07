@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList";
-import { getData } from "../mocks/ApiProducts";
+import { Data } from "../mocks/ApiProducts";
 
 const ItemListContainer = ({ greeting }) => {
     const [productList, setProductList]=useState([])
@@ -8,7 +8,7 @@ const ItemListContainer = ({ greeting }) => {
    
 
     useEffect (()=>{
-        getData
+        Data 
         .then((result)=> setProductList(result))
         .catch((error)=> console.log(error))
         
@@ -33,7 +33,7 @@ const ItemListContainer = ({ greeting }) => {
     return(
         <div>
             <h1>{greeting}</h1>
-            {loading ? <p>cargandp...</p> : <ItemList productList={productList}/>}
+            {loading ? <p>cargando...</p> : <ItemList productList={productList}/>}
             
         </div>
     )

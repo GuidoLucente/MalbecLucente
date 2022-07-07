@@ -1,14 +1,10 @@
 import React from "react";
 import Contador from "../ItemCount/Contador";
 
-const Item = ({product}) => {
+const Item = ({products}) => {
     
-    const {img, name, description, stock} = product
+    const {img, name, description, stock} = products
 
-
-    const onAdd = () => {
-        alert ("Producto agregado al carrito")
-    }
     
     return (
     <div className="card" style={{width:"20rem", margin:".5rem"}}>
@@ -17,7 +13,7 @@ const Item = ({product}) => {
         <p className="card-text">{name}</p>
         <p className="card-text">{description}</p>
         <p className="card-text">{stock}</p>
-    <Contador initial={1} stock={12} onAdd={onAdd}/>
+    
     </div>
     </div>
     )
