@@ -1,4 +1,5 @@
 import React from "react"
+import Contador from "../ItemCount/Contador"
 
 const ItemDetail = (detalle) => {
  

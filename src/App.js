@@ -2,17 +2,26 @@ import React from "react";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header/Header";
 import ItemListContainer from "./components/ItemListContainer/Container";
-import Contador from "./components/ItemCount/Contador";
-import Item from "./components/ItemProducts/Item";
+import ItemDetailConteiner from "./components/ItemDetailConteiner/ItemDetailConteiner"
+import { BrowserRouter } from "react-router-dom";
+import CartWidget from "./components/CartWidget/Cart";
 
-const App = () => {
+
+function App () {
   
   return(
-    <div className>
+    <div>
+     <BrowserRouter>
      <Header/>
-     <ItemListContainer greeting="Malbec vinoteca, todas las bebidas a un click" />
-     <Contador/>
-     <Item/>
+     <Routes>
+     
+     <Route path="/" element={<ItemListContainer/>}/>
+     <Route path="/category/:categoryid" element={<ItemListContainer/>}/>
+     <Route path="/detalle/:id" element={<ItemDetailConteiner/>}/>
+     <Route path="/cart" element={<CartWidget/>}/>
+     
+     </Routes>
+     </BrowserRouter>
     </div>
   )
 }
