@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../Pictures/CupLogo.png"
 import CartWidget from "../CartWidget/Cart";
 import "./Header.css"
@@ -32,7 +33,7 @@ const Header = () => {
         
         <ul>
          {categories.map((category)=>(
-            <link to={category.path} key={category.id}>{category.name}</link>
+            <Link to={category.path} key={category.id}>{category.name}</Link>
          ))}
         </ul>
         

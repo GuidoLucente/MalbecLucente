@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const Contador = ({initial, stock, onAdd}) => {
-
-    const [amount, setAmount] = useState (initial)
+const Contador = ({initial, stock, onAdd, amount, setAmount}) => {
+    
+    
     const count = (value) => {
         setAmount(amount+value)
     }
@@ -29,6 +29,7 @@ const Contador = ({initial, stock, onAdd}) => {
                 <button className="btn btn-success fw-bold display-1" onClick={sumar}> + </button>
             </div>
             <button className="btn btn-info" onClick={()=>onAdd(amount)}>Agregar al carrito</button>
+            
         </div>
     )
 

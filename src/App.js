@@ -3,26 +3,26 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header/Header";
 import ItemListContainer from "./components/ItemListContainer/Container";
 import ItemDetailConteiner from "./components/ItemDetailConteiner/ItemDetailConteiner"
-import { BrowserRouter } from "react-router-dom";
-import CartWidget from "./components/CartWidget/Cart";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import CartCustomProvider from "./components/Context/Cartcontext";
 
 
-function App () {
+
+const App = () => {
   
   return(
-    <div>
+
      <BrowserRouter>
+     <CartCustomProvider>
      <Header/>
      <Routes>
-     
      <Route path="/" element={<ItemListContainer/>}/>
      <Route path="/category/:categoryid" element={<ItemListContainer/>}/>
      <Route path="/detalle/:id" element={<ItemDetailConteiner/>}/>
-     <Route path="/cart" element={<CartWidget/>}/>
-     
      </Routes>
+     </CartCustomProvider>
      </BrowserRouter>
-    </div>
+
   )
 }
 

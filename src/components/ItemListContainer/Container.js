@@ -10,10 +10,16 @@ const ItemListContainer = ({ greeting }) => {
     const {categoryid}= useParams()
 
     useEffect (()=>{
-        getData (categoryid)
-        .then((result)=> setProductList(result))
+        getData
+        .then((result)=> {
+            if(categoryid){
+                setProductList(result.filter((Item)=> Item.category === categoryid))
+            }else{
+                setProductList(result)
+            }
+        })
         .catch((error)=> console.log(error))
-        .finally(()=> setLoading(false))
+        .finally(()=> setLoading(false ))
         
     },[categoryid])
 
