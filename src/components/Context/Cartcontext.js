@@ -1,4 +1,5 @@
 import React, {createContext, useState, useEffect} from "react";
+import Cartt from "../Cart/Cartt";
 
 export const CartContext = createContext();
 const { Provider } = CartContext
@@ -31,6 +32,7 @@ const CartCustomProvider = ({ children }) => {
     }
     getQtyProduct()
     }
+    
 
     const deleteProduct = (id) => {
     setProduct(product.filter(product => product.id !== id))
@@ -48,8 +50,14 @@ const CartCustomProvider = ({ children }) => {
         setQtyProduct(0)
     }
 
+    const calculateStock = () => { 
+     return Cartt.reduce(
+        (acum, actual) => acum + actual.price * actual.stock, 0
+     )
+    }
+
 return(
-    <Provider value={{addProduct, deleteProduct, isInCart, clear, setQtyProduct}}>
+    <Provider value={{addProduct, deleteProduct, isInCart, clear, setQtyProduct, calculateStock}}>
      {children}
     </Provider>
 )
